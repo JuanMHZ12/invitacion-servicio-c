@@ -39,7 +39,7 @@ body {
   color: var(--text);
   font-family: var(--sans);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: calc(1rem + 1px);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden; /* seguro extra: nunca scroll horizontal */
@@ -87,7 +87,7 @@ img, svg { display: block; max-width: 100%; }
 
 .section__script {
   font-family: var(--script);
-  font-size: 2.1rem;
+  font-size: calc(2.1rem + 1px);
   line-height: 1;
   color: var(--gold-script);
   margin-bottom: 6px;
@@ -96,7 +96,7 @@ img, svg { display: block; max-width: 100%; }
 .section__title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(1.9rem, 7.5vw, 2.4rem);
+  font-size: calc(clamp(1.9rem, 7.5vw, 2.4rem) + 1px);
   line-height: 1.15;
   color: var(--wine);
   margin-bottom: 36px;
@@ -182,7 +182,7 @@ img, svg { display: block; max-width: 100%; }
 .hero__title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2.1rem, 10.5vw, 3.2rem);
+  font-size: calc(clamp(2.1rem, 10.5vw, 3.2rem) + 1px);
   line-height: 1.1;
   letter-spacing: .16em;
   text-transform: uppercase;
@@ -192,7 +192,7 @@ img, svg { display: block; max-width: 100%; }
 
 .hero__script {
   font-family: var(--script);
-  font-size: clamp(2.1rem, 10vw, 2.9rem);
+  font-size: calc(clamp(2.1rem, 10vw, 2.9rem) + 1px);
   line-height: 1.2;
   color: var(--gold-script);
   margin-top: 6px;
@@ -200,7 +200,7 @@ img, svg { display: block; max-width: 100%; }
 
 .hero__event {
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 6vw, 1.7rem);
+  font-size: calc(clamp(1.35rem, 6vw, 1.7rem) + 1px);
   letter-spacing: .04em;
   color: var(--text);
   margin-top: 18px;
@@ -209,7 +209,7 @@ img, svg { display: block; max-width: 100%; }
 
 .hero__subtitle {
   max-width: 32ch;
-  font-size: 1rem;
+  font-size: calc(1rem + 1px);
   font-weight: 400;
   color: var(--muted);
 }
@@ -219,7 +219,7 @@ img, svg { display: block; max-width: 100%; }
   margin-top: 22px;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: calc(1.2rem + 1px);
   line-height: 1.45;
   color: var(--wine);
 }
@@ -239,7 +239,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .date-card__icon { margin: 0 auto 10px; color: var(--gold); }
 .date-card__weekday {
-  font-size: .78rem;
+  font-size: calc(.78rem + 1px);
   font-weight: 500;
   letter-spacing: .3em;
   text-transform: uppercase;
@@ -248,12 +248,12 @@ img, svg { display: block; max-width: 100%; }
 }
 .date-card__day {
   font-family: var(--serif);
-  font-size: 5rem;
+  font-size: calc(5rem + 1px);
   font-weight: 500;
   line-height: 1;
   margin: 4px 0 2px;
 }
-.date-card__month { font-family: var(--serif); font-style: italic; font-size: 1.5rem; }
+.date-card__month { font-family: var(--serif); font-style: italic; font-size: calc(1.5rem + 1px); }
 
 .info-list {
   display: grid;
@@ -271,8 +271,8 @@ img, svg { display: block; max-width: 100%; }
   text-align: left;
 }
 .info__icon { color: var(--gold); }
-.info__label { font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); }
-.info__value { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: var(--wine); text-align: right; }
+.info__label { font-size: calc(.72rem + 1px); font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-text); }
+.info__value { font-family: var(--serif); font-size: calc(1.15rem + 1px); font-style: italic; color: var(--wine); text-align: right; }
 
 /* =========================================================
    3. Contador
@@ -295,7 +295,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .countdown__num {
   font-family: var(--serif);
-  font-size: clamp(1.7rem, 8vw, 2.3rem);
+  font-size: calc(clamp(1.7rem, 8vw, 2.3rem) + 1px);
   font-weight: 500;
   line-height: 1.1;
   color: var(--wine);
@@ -303,7 +303,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .countdown__label {
   margin-top: 4px;
-  font-size: .64rem;
+  font-size: calc(.64rem + 1px);
   font-weight: 500;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -311,7 +311,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .countdown__done {
   font-family: var(--script);
-  font-size: 2.6rem;
+  font-size: calc(2.6rem + 1px);
   line-height: 1.2;
   color: var(--wine);
   animation: fadeUp 1s var(--ease) both;
@@ -352,11 +352,11 @@ img, svg { display: block; max-width: 100%; }
     radial-gradient(100% 60% at 50% 0%, var(--blush), transparent 70%),
     #fff;
 }
-.slide__num { font-size: .72rem; font-weight: 500; letter-spacing: .3em; color: var(--gold-text); }
+.slide__num { font-size: calc(.72rem + 1px); font-weight: 500; letter-spacing: .3em; color: var(--gold-text); }
 .slide__month {
   font-family: var(--script);
   font-weight: 400;
-  font-size: 3.2rem;
+  font-size: calc(3.2rem + 1px);
   line-height: 1.2;
   color: var(--wine);
 }
@@ -365,12 +365,12 @@ img, svg { display: block; max-width: 100%; }
   max-width: 24ch;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 1px);
   color: var(--muted);
 }
 .slide__list { display: grid; gap: 10px; }
-.slide__name { display: block; font-family: var(--serif); font-size: 1.3rem; font-weight: 500; line-height: 1.25; color: var(--text); }
-.slide__date { display: block; font-size: .78rem; letter-spacing: .08em; color: var(--gold-text); }
+.slide__name { display: block; font-family: var(--serif); font-size: calc(1.3rem + 1px); font-weight: 500; line-height: 1.25; color: var(--text); }
+.slide__date { display: block; font-size: calc(.78rem + 1px); letter-spacing: .08em; color: var(--gold-text); }
 
 .carousel__dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
 .carousel__dots span {
@@ -389,7 +389,7 @@ img, svg { display: block; max-width: 100%; }
   border-radius: 999px;
   background: #fff;
   color: var(--wine);
-  font: 500 .8rem/1 var(--sans);
+  font: 500 calc(.8rem + 1px)/1 var(--sans);
   letter-spacing: .06em;
   cursor: pointer;
   transition: background .3s, border-color .3s, color .3s;
@@ -427,7 +427,7 @@ img, svg { display: block; max-width: 100%; }
   margin: 0 auto;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: calc(1.25rem + 1px);
   line-height: 1.5;
   color: #fffaf5;
 }
@@ -488,14 +488,14 @@ img, svg { display: block; max-width: 100%; }
   top: -6px; left: 50%;
   transform: translateX(-50%);
   font-family: var(--serif);
-  font-size: 3.6rem;
+  font-size: calc(3.6rem + 1px);
   line-height: 1;
   color: var(--gold);
 }
 .quote p {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: calc(1.25rem + 1px);
   line-height: 1.45;
   color: var(--wine);
 }
@@ -517,7 +517,7 @@ img, svg { display: block; max-width: 100%; }
   padding: 14px 22px;
   border: 1px solid transparent;
   border-radius: 999px;
-  font: 500 .9rem/1.3 var(--sans);
+  font: 500 calc(.9rem + 1px)/1.3 var(--sans);
   letter-spacing: .03em;
   text-decoration: none;
   transition: background .3s, color .3s, border-color .3s, transform .3s var(--ease), box-shadow .3s;
@@ -557,7 +557,7 @@ img, svg { display: block; max-width: 100%; }
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   color: var(--wine);
-  font: 500 .78rem/1 var(--sans);
+  font: 500 calc(.78rem + 1px)/1 var(--sans);
   letter-spacing: .06em;
   cursor: pointer;
   transition: background .3s, color .3s;
@@ -600,20 +600,20 @@ img, svg { display: block; max-width: 100%; }
   background: radial-gradient(circle at 35% 30%, #93304f, var(--wine) 60%, var(--wine-dark));
   box-shadow: 0 0 0 4px var(--ivory), 0 0 0 5px var(--gold), 0 14px 30px -14px rgba(92, 22, 48, .7);
   color: #e8cf9f;
-  font: 400 2.6rem/1 var(--script);
+  font: 400 calc(2.6rem + 1px)/1 var(--script);
   padding-top: 6px;
 }
-.cover__script { font-family: var(--script); font-size: 2rem; line-height: 1.2; color: var(--gold-script); }
+.cover__script { font-family: var(--script); font-size: calc(2rem + 1px); line-height: 1.2; color: var(--gold-script); }
 .cover__title {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(1.8rem, 8vw, 2.3rem);
+  font-size: calc(clamp(1.8rem, 8vw, 2.3rem) + 1px);
   line-height: 1.15;
   color: var(--wine);
 }
-.cover__text { margin-top: 10px; font-size: .9rem; font-weight: 400; letter-spacing: .04em; color: var(--muted); }
+.cover__text { margin-top: 10px; font-size: calc(.9rem + 1px); font-weight: 400; letter-spacing: .04em; color: var(--muted); }
 .cover__btn { width: 100%; max-width: 300px; margin: 32px auto 0; }
-.cover__hint { margin-top: 14px; font-size: .82rem; font-weight: 400; color: var(--muted); }
+.cover__hint { margin-top: 14px; font-size: calc(.82rem + 1px); font-weight: 400; color: var(--muted); }
 
 /* Mientras el sobre está cerrado: sin scroll y la portada espera para animarse */
 html.is-locked body { overflow: hidden; }
@@ -629,11 +629,11 @@ html.is-locked .hero > * { animation-play-state: paused; }
   margin: 0 auto;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: calc(1.2rem + 1px);
   line-height: 1.5;
   color: var(--muted);
 }
-.footer__brand { margin-top: 16px; font-family: var(--script); font-size: 2.6rem; line-height: 1.2; color: var(--wine); }
+.footer__brand { margin-top: 16px; font-family: var(--script); font-size: calc(2.6rem + 1px); line-height: 1.2; color: var(--wine); }
 
 /* =========================================================
    Tablet / desktop: la invitación se ve como una tarjeta
@@ -646,7 +646,7 @@ html.is-locked .hero > * { animation-play-state: paused; }
   }
   .hero { min-height: 760px; }
   .countdown { gap: 12px; }
-  .countdown__label { font-size: .66rem; letter-spacing: .14em; }
+  .countdown__label { font-size: calc(.66rem + 1px); letter-spacing: .14em; }
 }
 
 /* Legibilidad: la serif itálica un poco más gruesa */
