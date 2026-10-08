@@ -9,7 +9,7 @@
 // Fecha del contador: new Date(año, mes, día, hora, minutos)
 // OJO: los meses van de 0 a 11 → diciembre = 11.
 // Cuando se confirme la hora, cámbiala aquí (ej. 18, 30 para las 6:30 p. m.).
-const fechaEvento = new Date(2026, 11, 17, 0, 0);
+const fechaEvento = new Date(2026, 11, 17, 19, 0); // 7:00 p. m.
 
 // WhatsApp: código de país + número, sin "+", espacios ni guiones.
 const whatsappNumber = "51999999999";
@@ -33,7 +33,6 @@ const homenajeadas = [
       { nombre: "Lily Amparo Orellano Fernandez", fecha: "26 de octubre" },
     ],
   },
-  { mes: "Noviembre", personas: [] },
   {
     mes: "Diciembre",
     personas: [
