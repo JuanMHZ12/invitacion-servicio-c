@@ -12,10 +12,10 @@
   --wine: #7a1f3d;
   --wine-dark: #5c1630;
   --gold: #c2a067;        /* decorativo */
-  --gold-text: #8c6a33;   /* texto pequeño dorado (contraste AA) */
-  --gold-script: #9c7742; /* texto script grande */
-  --text: #3d2a2f;
-  --muted: #6e5a5f;
+  --gold-text: #6b4d1f;   /* texto pequeño dorado (alto contraste) */
+  --gold-script: #7a5726; /* texto script grande */
+  --text: #2a181d;
+  --muted: #4a363c;
   --line: #e6d7c3;
 
   /* Tipografías */
@@ -87,7 +87,7 @@ img, svg { display: block; max-width: 100%; }
 
 .section__script {
   font-family: var(--script);
-  font-size: 1.9rem;
+  font-size: 2.1rem;
   line-height: 1;
   color: var(--gold-script);
   margin-bottom: 6px;
@@ -209,8 +209,8 @@ img, svg { display: block; max-width: 100%; }
 
 .hero__subtitle {
   max-width: 32ch;
-  font-size: .95rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--muted);
 }
 
@@ -303,9 +303,9 @@ img, svg { display: block; max-width: 100%; }
 }
 .countdown__label {
   margin-top: 4px;
-  font-size: .6rem;
+  font-size: .64rem;
   font-weight: 500;
-  letter-spacing: .1em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--gold-text);
 }
@@ -421,7 +421,7 @@ img, svg { display: block; max-width: 100%; }
 
 .christmas__star { width: 20px; height: 20px; margin: 24px auto 18px; color: var(--gold); }
 .christmas .section__title { color: var(--ivory); margin-bottom: 20px; }
-.christmas .section__title .script { color: #e8cf9f; }
+.christmas .section__title .script { color: #f3dcae; }
 .christmas__text {
   max-width: 30ch;
   margin: 0 auto;
@@ -429,7 +429,7 @@ img, svg { display: block; max-width: 100%; }
   font-style: italic;
   font-size: 1.25rem;
   line-height: 1.5;
-  color: #f6e3e3;
+  color: #fffaf5;
 }
 /* Esferas colgantes con balanceo muy suave */
 .baubles { position: absolute; top: 0; left: 0; right: 0; }
@@ -504,7 +504,7 @@ img, svg { display: block; max-width: 100%; }
 /* =========================================================
    7 y 8. Botones
    ========================================================= */
-.rsvp__text { margin: -20px 0 28px; color: var(--muted); font-weight: 300; }
+.rsvp__text { margin: -20px 0 28px; color: var(--muted); font-weight: 400; }
 
 .actions { display: grid; gap: 14px; max-width: 360px; margin: 0 auto; }
 
@@ -557,7 +557,7 @@ img, svg { display: block; max-width: 100%; }
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   color: var(--wine);
-  font: 500 .72rem/1 var(--sans);
+  font: 500 .78rem/1 var(--sans);
   letter-spacing: .06em;
   cursor: pointer;
   transition: background .3s, color .3s;
@@ -611,9 +611,9 @@ img, svg { display: block; max-width: 100%; }
   line-height: 1.15;
   color: var(--wine);
 }
-.cover__text { margin-top: 10px; font-size: .85rem; font-weight: 300; letter-spacing: .04em; color: var(--muted); }
+.cover__text { margin-top: 10px; font-size: .9rem; font-weight: 400; letter-spacing: .04em; color: var(--muted); }
 .cover__btn { width: 100%; max-width: 300px; margin: 32px auto 0; }
-.cover__hint { margin-top: 14px; font-size: .75rem; font-weight: 300; color: var(--muted); }
+.cover__hint { margin-top: 14px; font-size: .82rem; font-weight: 400; color: var(--muted); }
 
 /* Mientras el sobre está cerrado: sin scroll y la portada espera para animarse */
 html.is-locked body { overflow: hidden; }
@@ -648,6 +648,10 @@ html.is-locked .hero > * { animation-play-state: paused; }
   .countdown { gap: 12px; }
   .countdown__label { font-size: .66rem; letter-spacing: .14em; }
 }
+
+/* Legibilidad: la serif itálica un poco más gruesa */
+.hero__quote, .christmas__text, .footer__text, .slide__placeholder,
+.quote p, .info__value, .date-card__month { font-weight: 500; }
 
 /* =========================================================
    Accesibilidad: movimiento reducido
