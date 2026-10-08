@@ -156,29 +156,72 @@ function iniciarBotones() {
   }
 }
 
-/* ---------- Música opcional ---------- */
+/* ---------- Música ---------- */
+// Los navegadores (y WhatsApp) no dejan sonar música sin un toque previo:
+// por eso la canción arranca al pulsar "Abrir invitación" en el sobre de entrada.
 function iniciarMusica() {
   const audio = $("#music");
   const btn = $("#music-toggle");
   const label = btn.querySelector(".music-toggle__label");
+  const icon = btn.querySelector("use");
   audio.volume = 0.5;
 
-  btn.addEventListener("click", async () => {
-    if (!audio.paused) {
+  // Refleja el estado actual en el botón
+  function pintar() {
+    btn.classList.toggle("is-playing", !audio.paused && !audio.muted);
+    label.textContent = audio.paused ? "Activar música" : audio.muted ? "Activar sonido" : "Silenciar";
+    icon.setAttribute("href", audio.muted ? "#i-mute" : "#i-music");
+  }
+
+  // Si no existe assets/audio/musica.mp3 la página sigue normal
+  function noDisponible() {
+    label.textContent = "Música no disponible";
+    btn.disabled = true;
+  }
+
+  function reproducir() {
+    audio.play().catch((err) => {
+      if (err.name === "NotSupportedError") noDisponible();
+    });
+  }
+
+  btn.addEventListener("click", () => {
+    if (audio.paused) reproducir();  // aún no sonaba: la inicia
+    else audio.muted = !audio.muted; // silenciar / activar sonido
+  });
+
+  ["play", "pause", "volumechange"].forEach((ev) => audio.addEventListener(ev, pintar));
+  audio.addEventListener("error", noDisponible);
+
+  // Pausa si la persona cambia de app o pestaña, y retoma al volver
+  let sonabaAntes = false;
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      sonabaAntes = !audio.paused;
       audio.pause();
-      btn.setAttribute("aria-pressed", "false");
-      label.textContent = "Activar música";
-      return;
+    } else if (sonabaAntes) {
+      audio.play().catch(() => {});
     }
-    try {
-      await audio.play();
-      btn.setAttribute("aria-pressed", "true");
-      label.textContent = "Pausar música";
-    } catch {
-      // Si no existe assets/audio/musica.mp3 la página sigue normal
-      label.textContent = "Música no disponible";
-      btn.disabled = true;
-    }
+  });
+
+  return reproducir;
+}
+
+/* ---------- Sobre de entrada ---------- */
+function iniciarPortada(reproducir) {
+  const html = document.documentElement;
+  const cover = $("#cover");
+  const detras = [$(".invitation"), $("#music-toggle")]; // no navegable mientras el sobre está cerrado
+
+  html.classList.add("is-locked");
+  detras.forEach((el) => (el.inert = true));
+
+  $("#cover-open").addEventListener("click", () => {
+    reproducir(); // dentro del clic: el navegador permite el sonido
+    html.classList.remove("is-locked");
+    detras.forEach((el) => (el.inert = false));
+    cover.classList.add("is-leaving");
+    setTimeout(() => (cover.hidden = true), 900);
   });
 }
 
@@ -186,4 +229,4 @@ iniciarApariciones();
 iniciarContador();
 iniciarCarrusel();
 iniciarBotones();
-iniciarMusica();
+iniciarPortada(iniciarMusica());

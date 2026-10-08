@@ -563,8 +563,61 @@ img, svg { display: block; max-width: 100%; }
   transition: background .3s, color .3s;
 }
 .music-toggle .icon { width: 18px; height: 18px; }
-.music-toggle[aria-pressed="true"] { background: var(--wine); color: var(--ivory); border-color: var(--wine); }
+.music-toggle.is-playing { background: var(--wine); color: var(--ivory); border-color: var(--wine); }
 .music-toggle:disabled { color: var(--muted); cursor: default; }
+
+/* =========================================================
+   Sobre de entrada (solo con JS)
+   ========================================================= */
+.cover { display: none; }
+.js .cover {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px var(--gutter);
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 55% at 50% 0%, var(--blush) 0%, transparent 70%),
+    radial-gradient(90% 40% at 50% 100%, #f8eeea 0%, transparent 70%),
+    var(--ivory);
+  transition: opacity .9s var(--ease), visibility .9s;
+}
+.cover.is-leaving { opacity: 0; visibility: hidden; }
+.cover__content { animation: fadeUp 1.2s var(--ease) both; }
+
+/* Sello de lacre */
+.cover__seal {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #93304f, var(--wine) 60%, var(--wine-dark));
+  box-shadow: 0 0 0 4px var(--ivory), 0 0 0 5px var(--gold), 0 14px 30px -14px rgba(92, 22, 48, .7);
+  color: #e8cf9f;
+  font: 400 2.6rem/1 var(--script);
+  padding-top: 6px;
+}
+.cover__script { font-family: var(--script); font-size: 2rem; line-height: 1.2; color: var(--gold-script); }
+.cover__title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 8vw, 2.3rem);
+  line-height: 1.15;
+  color: var(--wine);
+}
+.cover__text { margin-top: 10px; font-size: .85rem; font-weight: 300; letter-spacing: .04em; color: var(--muted); }
+.cover__btn { width: 100%; max-width: 300px; margin: 32px auto 0; }
+.cover__hint { margin-top: 14px; font-size: .75rem; font-weight: 300; color: var(--muted); }
+
+/* Mientras el sobre está cerrado: sin scroll y la portada espera para animarse */
+html.is-locked body { overflow: hidden; }
+html.is-locked .hero > * { animation-play-state: paused; }
 
 /* =========================================================
    10. Footer
