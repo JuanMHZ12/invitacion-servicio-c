@@ -12,7 +12,7 @@
 const fechaEvento = new Date(2026, 11, 17, 19, 0); // 7:00 p. m.
 
 // WhatsApp: código de país + número, sin "+", espacios ni guiones.
-const whatsappNumber = "51999999999";
+const whatsappNumber = "51958684482";
 const whatsappMessage = "Hola, confirmo mi asistencia a la celebración del Servicio C del 17 de diciembre.";
 
 // Enlace de Google Maps. Déjalo vacío ("") mientras el lugar esté por confirmar.
